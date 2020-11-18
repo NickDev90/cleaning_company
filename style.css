@@ -4,8 +4,8 @@
 	font-family: 'Josefin Sans', sans-serif;;
 }
 body {
-	position: relative;
-	z-index: 2;
+	/*position: relative;*/
+	z-index: 1; 
 }
 
 li, a {
@@ -19,9 +19,10 @@ a:not(.blog_card) {
 
 .block-1 {
 	background: #f2f9ff;
-	background-size: cover;
+/*	background-size: cover;*/
 	width: 100%;
 	height: 100vh;
+	position: relative;
 
 }
 .block-1>img {
@@ -32,44 +33,20 @@ a:not(.blog_card) {
 	z-index: 1;
 }
 .wrapper {
-	width: 70%;
+	width: 80%;
 	margin: 0 auto;
 }
 header {
-	padding-top: 80px;
-
-}
-.logo {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	margin-right: 80px;
-	color: #008aff;
-	font-size: 19px;
-	margin-left: 200px;
-	z-index: 5;
-}
-.logo img {
-	margin-right: 20px;
-}
-.clean {
-	font-weight: 700;
-}
-.nav {
-	display: grid;
-	grid-template-columns: 2fr 4fr;
-	align-items: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	width: 100%;
-
 	position: fixed;
 	left: 0;
 	top: 0;
-
-	z-index: 5;
-
+	z-index: 3;
 }
 
-.nav:before {
+header:before {
 	content: ' ';
 	position: absolute;
 	top: 0;
@@ -78,20 +55,54 @@ header {
 	height: 100%;
 	background-color: #C7D33D;
 /*	opacity: .8;*/
-	z-index: 2;
+	z-index: 3;
 }
+
+.nav {
+	display: grid;
+	grid-template-columns: 2fr 4fr;
+	align-items: center;
+	max-width: 80%;
+	margin: 0 auto;
+
+/*	position: fixed;
+	left: 0;
+	top: 0;*/
+
+	z-index: 5;
+
+}
+
+.logo {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-right: 80px;
+	color: #008aff;
+	font-size: 19px;
+/*	margin-left: 200px;*/
+	z-index: 5;
+}
+.logo img {
+	margin-right: 20px;
+}
+.clean {
+	font-weight: 700;
+}
+
 
 .burger {
 	display: none;
 }
 .menu {
 	display: flex;
-	justify-content: center;
-
+	justify-content: space-between;
+	max-width: 100%;
+	z-index: 5;
 }
 .menu li {
-	margin: 20px;
-	z-index: 2;
+	/*	*/
+	
 }
 .menu li a {
 	font-size: 16px;
@@ -116,7 +127,7 @@ header {
 main {
 	width: 60%;
 	height: auto;
-	margin-top: 150px;
+	padding-top: 150px;
 	margin-left: 0;
 	position: relative;
 	z-index: 2;
@@ -641,40 +652,42 @@ form{
 
 
 
-@media screen and (max-width: 1050px) {
+/*@media screen and (max-width: 1050px) {
 	body img {
 		display: zoom: 0.5;
 	}
-}
+}*/
  
 
 @media screen and (max-width: 900px) {
-	.promo {30
+	.promo {
 		font-size: 30px;
 	}
 }
 
 @media screen and (max-width: 768px) {
-	nav {
-		position: absolute;
+	header {
+		position: fixed;
 		top: 0;
 		left: 0;
-		max-width: 100%;
+		width: 100%;
 		display: inline-block;
 		z-index: 3;
-		
 	}
-	.logo {
+	.nav {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
+/*	.logo {
 		margin: auto;
-	}
+	}*/
 	.burger {
 		display: block;
-		position: absolute;
-		top: 10px;
-		right: 10px;
+		position: relative;
 		width: 30px;
 		height: 20px;
-		z-index: 3;
+		z-index: 5;
 	}
 	.burger:before, 
 	.burger:after {
@@ -708,10 +721,21 @@ form{
 		height: 100%;
 		background-color: #40E0D0;
 		display: block;
-		padding-top: 40px;
+		padding-top: 60px;
+		padding-left: 15%;
 		transition: .3s;
 		overflow: auto;
+		z-index: 2;
 	}
+	.menu li {
+		margin: 25px 0 0 0;
+		font-size: 20px;
+	}
+
+	.menu li a {
+		font-size: 20px;
+	}
+
 	.burger.active:before {
 		transform: rotate(45deg);
 		top: 9px;
