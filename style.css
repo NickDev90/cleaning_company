@@ -2,10 +2,12 @@
 	margin: 0;
 	padding: 0;
 	font-family: 'Josefin Sans', sans-serif;;
+	box-sizing: border-box;
 }
 body {
-	/*position: relative;*/
+	position: relative;
 	z-index: 1; 
+	/*overflow: hidden;*/
 }
 
 li, a {
@@ -19,7 +21,7 @@ a:not(.blog_card) {
 
 .block-1 {
 	background: #f2f9ff;
-/*	background-size: cover;*/
+	background-size: cover;
 	width: 100%;
 	height: 100vh;
 	position: relative;
@@ -33,9 +35,10 @@ a:not(.blog_card) {
 	z-index: 1;
 }
 .wrapper {
-	width: 80%;
+	max-width: 80%;
 	margin: 0 auto;
 }
+
 header {
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -125,7 +128,7 @@ header:before {
 	white-space: nowrap;
 }
 main {
-	width: 60%;
+	width: 100%;
 	height: auto;
 	padding-top: 150px;
 	margin-left: 0;
@@ -143,7 +146,7 @@ h1 {
 	font-size: 55px;
 	margin-bottom: 30px;
 	font-weight: 400;
-	white-space: nowrap;
+	white-space: normal;
 	max-width: 100%;
 }
 main .btn {
@@ -233,6 +236,7 @@ main .btn {
 .cards {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	max-width: 100%;
 	justify-content: space-between;
 	text-align: center;
@@ -283,7 +287,7 @@ main .btn {
 }
 
 .block-4 {
-	width: 100%;
+	max-width: 100%;
 	height: 70vh;
 	background: url('img/block-4_bg.png') 0 0/cover no-repeat;
 	text-align: center;
@@ -330,15 +334,17 @@ main .btn {
 .plans {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	margin-top: 40px;
+	max-width: 100%;
 }
 
 .price-card {
 	display: block;
 	border: 1px solid #f6f6f6;
 	border-radius: 10px;
-	width: 27%;
+	flex: 0 1 27%;  /* спробувати змінити на width 27%
 	/*padding: 20px;*/
 	box-sizing: border-box;
 }
@@ -390,18 +396,19 @@ main .btn {
 }
 
 .block-6 {
-	max-width: 100%;
-	background: url(img/22.png) 0 0/ cover no-repeat;
-	height: 70vh;
+	width: 100%;
+	background: url(img/22.png) center/ cover no-repeat;
+	max-height: 70vh;
 	text-align: center;
 	margin-bottom: 50px;
+	padding-bottom: 5px;
 }
 .flag {
 	width: 120px;
 	margin: auto;
 }
 .promo {
-	width: 100%;
+	max-width: 100%;
 	position: relative;
 	text-align: center;
 	color: white;
@@ -510,12 +517,14 @@ footer {
 	grid-template-columns: 35% 25% 40%;
 	margin-top: 40px;
 	margin-bottom: 40px;
+	max-width: 100%;
 	/*justify-content: space-between;*/
 }
 .logo-card {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
+	max-width: 100%;
 }
 .btn_logo {
 	max-width: 200px;
@@ -543,6 +552,7 @@ footer {
 	color: #474747;
 	line-height: 1.5;
 	justify-self: center;
+	max-width: 100%;
 }
 #contact {
 	font-weight: 400;
@@ -558,8 +568,7 @@ footer {
 	flex-direction: column;
 	justify-self: end;
 	justify-content: flex-start;
-
-
+	max-width: 100%;
 }
 .subscribe {
 	font-size: 16px;
@@ -656,8 +665,8 @@ form{
 	body img {
 		display: zoom: 0.5;
 	}
-}*/
- 
+}
+*/ 
 
 @media screen and (max-width: 900px) {
 	.promo {
@@ -666,11 +675,11 @@ form{
 }
 
 @media screen and (max-width: 768px) {
-	header {
+	.header_head {
 		position: fixed;
 		top: 0;
 		left: 0;
-		width: 100%;
+		max-width: 100%;
 		display: inline-block;
 		z-index: 3;
 	}
@@ -712,6 +721,7 @@ form{
 		width: 100%;
 		height: 2px;
 		background-color: #fff;
+		transition: .3s;
 	}
 	.menu {
 		position: fixed;
@@ -750,8 +760,146 @@ form{
 	}
 	.menu.active {
 		top: 0;
+		padding-top: 150px;
 	}
 	body.lock {
 		overflow: hidden;
 	}
+
+	.block-1 {
+		width: 100%;
+		height: 100vh;
+	}
+
+	.main {
+		width: 100%;
+	}
+
+	.block-1>img {
+		display: none;
+	}
+
+/*	.wrapper {
+		width: 100%;
+		padding: 0 20px;
+	}*/
+
+/*	.block-1>img {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 60px;
+	z-index: 1;
+	}*/
+	.block-2 {
+		height: auto;
+	}
+
+	.block-2 .kinds {
+		display: flex;
+		flex-direction: column;
+		margin: 0 auto;
+		text-align: center;
+		justify-content: center;
+	}
+
+	.block-2 .kinds .btn {
+		margin-left: 0;
+	}
+	.commerce, .resid {
+		text-align: justify;
+		align-content: center;
+	}
+	.commerce .list .objects-1, 
+	.resid .list .objects-1 {
+		justify-self: center;
+	}
+
+	.commerce>* {
+		justify-self: center;
+	}
+	.resid img, .resid p, .resid .list, .resid .btn {
+		justify-self: center;
+	}
+
+	.objects-2 {
+		display: none;
+	}
+
+	.block-3 {
+		height: auto;
+	}
+
+	.card-1 {
+		margin-bottom: 20px;
+	}
+
+	.block-5 {
+		height: auto;
+	}
+
+	.plans {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.block-6 {
+		height: auto;
+	}
+
+	.block-6 h1 {
+		white-space: normal;
+	}
+
+	.block-6 .btn {
+
+	}
+
+	.block-7 {
+		height: auto;
+	}
+
+	.blog {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.block-7 .blog .blog_card {
+		width: 100%;
+		align-content: center;
+		text-align: center;
+		margin-bottom: 50px;
+	}
+
+	.block-7 .blog .blog_card .blog_title {
+		margin-top: 20px;
+	}
+
+	.block-7 .blog .blog_card .blog_info {
+		margin-bottom: 20px;
+	}
+
+
+	footer {
+		height: auto;
+		margin-top: 50px;
+	}
+
+	.menu_foot {
+		display: none;
+	}
+
+	.foot-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+	}
+
+	.foot-content > * {
+		margin-bottom: 20px;
+	}
+
+
 }
