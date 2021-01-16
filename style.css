@@ -224,7 +224,10 @@ main .btn {
 	flex-direction: column;
 	justify-content: center;
 	text-align: center;
-	height: 100vh;
+	height: auto;
+	margin-bottom: 30px;
+	padding-top: 40px;
+	padding-bottom: 40px;
 }
 
 .block-3 h2 {
@@ -241,13 +244,17 @@ main .btn {
 	justify-content: space-between;
 	text-align: center;
 	margin-top: 30px;
-	margin-bottom: 80px;
 	align-items: center;
 }
 .card-1 img {
 	margin-bottom: 20px;
 
 }
+.card-1 {
+	max-width: 45%;
+	padding: 20px;
+}
+
 .like img {
 	width: 200px;
 	position: relative;
@@ -288,11 +295,12 @@ main .btn {
 
 .block-4 {
 	max-width: 100%;
-	height: 70vh;
+	height: 80vh;
 	background: url('img/block-4_bg.png') 0 0/cover no-repeat;
 	text-align: center;
 	padding-top: 80px ;
 	padding-bottom: 80px;
+	margin: 20px auto;
 }	
 .block-4 h2 {
 	color: #13287e;
@@ -305,6 +313,7 @@ main .btn {
 }
 .card-face {
 	margin-top: 25px;
+	padding-bottom: 20px;
 }
 .face__title {
 	margin-top: 20px;
@@ -566,7 +575,7 @@ footer {
 	color: #008aff;
 	text-transform: uppercase;
 	font-weight: 600;
-}
+} 
 .social {
 	display: flex;
 	flex-direction: column;
@@ -584,7 +593,6 @@ form{
   padding: 4px 10px 4px 10px;
   width: 254px;
   margin: 0 0 25px 0;
-  height: 30px;
   background-color: #e4d9c5;
   border-radius: 9px;
   display: inline-block;
@@ -619,7 +627,7 @@ form{
   background-color: #e4d9c5;
   cursor: pointer;
   transition: color .2s;
-  width: 20%;
+  width: 25%;
   height: 30px;
 }
 
@@ -665,12 +673,13 @@ form{
 
 
 
-/*@media screen and (max-width: 1050px) {
-	body img {
-		display: zoom: 0.5;
+@media screen and (max-width: 1050px) {
+	.block-2, .block-3, .block-4, 
+	.block-5, .block-6,.block-7 {
+		height: auto;
 	}
 }
-*/ 
+ 
 
 @media screen and (max-width: 900px) {
 	.promo {
@@ -835,7 +844,8 @@ form{
 	}
 
 	.card-1 {
-		margin-bottom: 20px;
+		margin: 20px auto;
+		max-width: 90%;
 	}
 
 	.block-5 {
@@ -888,6 +898,21 @@ form{
 	footer {
 		height: auto;
 		margin-top: 50px;
+		/*text-align: center;*/
+		
+	}
+	.foot-content {
+		display: flex;
+		justify-content: center;
+		text-align: center;
+	}
+
+	.logo-card, .contact, .social {
+		margin: 20px auto;
+	}
+
+	.social form {
+		margin: 5px auto 20px auto;
 	}
 
 	.menu_foot {
